@@ -1,7 +1,8 @@
 ## This provides wrapper functions to create a custom matrix .Additionally it has 
 ## routines which can compute  and  cache  its inverse lazily  , thus avoiding recomputation 
 
-## Creates a custom inverse cacheable  matrix .Inout is a matrix
+## Creates a custom inverse cacheable  matrix .Input is a matrix 
+## Inverse calcualtion assumes that the matrix which is invertible 
 
 makeCacheMatrix <- function(x = matrix()) {
 
