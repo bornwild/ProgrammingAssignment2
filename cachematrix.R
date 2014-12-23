@@ -1,10 +1,10 @@
 ## This provides wrapper functions to create a custom matrix .Additionally it has 
 ## routines which can compute  and  cache  its inverse lazily  , thus avoiding recomputation 
 
-## Creates a custom inverse cacheable  matrix .Input is a matrix 
-## Inverse calcualtion assumes that the matrix which is invertible 
-
-## Sample 
+##
+# makeCacheMatrix :Creates a custom inverse cacheable  matrix .Input is a matrix 
+# Inverse calcualtion assumes that the matrix which is invertible 
+# Sample 
 # > k <- matrix(c(4,7,2,6),2,2)
 # > x <- makeCacheMatrix(k)
 # > cacheSolve(x)
@@ -16,6 +16,7 @@
 #     [,1] [,2]
 # [1,]  0.6 -0.2
 # [2,] -0.7  0.4
+##
 
 makeCacheMatrix <- function(x = matrix()) {
   inv <- NULL
@@ -32,9 +33,10 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Computes the inverse of the matrix lazily 
-## Input to function is a matrix created by the makeCacheMatrix function
-
+## 
+# cacheSolve: Computes the inverse of the matrix lazily 
+# Input to function is a matrix created by the makeCacheMatrix function
+##
 cacheSolve <- function(x) {
   inv <- x$getInv()
   if(!is.null(inv)) {
